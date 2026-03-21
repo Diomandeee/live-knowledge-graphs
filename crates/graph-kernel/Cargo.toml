@@ -1,0 +1,82 @@
+[package]
+name = "cc-graph-kernel"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.75"
+authors = ["Mohamed Diomande"]
+description = "Deterministic context slicing for conversation DAGs"
+license = "MIT"
+repository = "https://github.com/yourusername/Comp-Core"
+keywords = ["graph", "context", "slicing", "dag", "trajectory"]
+categories = ["algorithms", "data-structures"]
+
+[lib]
+name = "cc_graph_kernel"
+crate-type = ["cdylib", "rlib"]
+
+[[bin]]
+name = "graph_kernel_service"
+path = "src/bin/graph_kernel_service.rs"
+required-features = ["service"]
+
+[features]
+default = []
+postgres = ["sqlx", "tokio"]
+sqlite = ["sqlx/sqlite", "tokio"]
+service = ["axum", "tower", "tower-http", "tokio", "postgres", "moka"]
+service-sqlite = ["axum", "tower", "tower-http", "tokio", "sqlite", "moka"]
+
+[dependencies]
+# Serialization
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+
+# Hashing
+xxhash-rust = { version = "0.8", features = ["xxh64"] }
+
+# Cryptographic HMAC for admissibility tokens
+hmac = "0.12"
+sha2 = "0.10"
+hex = "0.4"
+
+# Caching for token verification + query cache
+lru = "0.12"
+parking_lot = "0.12"
+moka = { version = "0.12", features = ["sync"], optional = true }
+
+# UUID
+uuid = { version = "1.0", features = ["v4", "serde"] }
+
+# Time
+chrono = { version = "0.4", features = ["serde"] }
+
+# Error handling
+thiserror = "1.0"
+
+# Async runtime (optional - for PostgreSQL)
+tokio = { version = "1.0", features = ["full"], optional = true }
+
+# Database (optional - for PostgreSQL graph store)
+sqlx = { version = "0.7", features = ["runtime-tokio", "postgres", "chrono", "uuid"], optional = true }
+
+# Web framework (optional - for service)
+axum = { version = "0.7", optional = true }
+tower = { version = "0.4", optional = true }
+tower-http = { version = "0.5", features = ["cors", "trace", "timeout"], optional = true }
+
+# Logging and observability
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter", "json"] }
+
+# Regex for path normalization (lightweight, no dependencies)
+regex-lite = "0.1"
+
+[dev-dependencies]
+proptest = "1.0"
+tokio = { version = "1.0", features = ["full", "rt-multi-thread", "macros"] }
+criterion = { version = "0.5", features = ["html_reports"] }
+
+[[bench]]
+name = "verification"
+harness = false
+
