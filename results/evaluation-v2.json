@@ -1,0 +1,80 @@
+{
+  "timestamp": "2026-03-21T10:27:38Z",
+  "eval_1": {
+    "conversations_analyzed": 39,
+    "total_turns": 5000,
+    "convergence_rate": 0.1282051282051282,
+    "tp_prediction_accuracy": 0.48717948717948717,
+    "z_score": -0.16012815380508713,
+    "scalars": {
+      "commitment": {
+        "mean": 0.10337439586260412,
+        "std": 0.019316573820480683
+      },
+      "uncertainty": {
+        "mean": 0.1589521527782194,
+        "std": 0.04392015463515789
+      },
+      "transition_pressure": {
+        "mean": -0.002433332480814592,
+        "std": 0.004487441528646675
+      },
+      "recovery_margin": {
+        "mean": 0.80731360502518,
+        "std": 0.12155938651486115
+      }
+    }
+  },
+  "eval_2": {
+    "valid_paths": 199,
+    "hard_negatives": 199,
+    "valid_mean": 6.442211055276382,
+    "neg_mean": 1.6256281407035176,
+    "cohens_d": 2.2277794387282235,
+    "pairwise_accuracy": 0.8099542940834827
+  },
+  "eval_3": {
+    "motion": {
+      "commitment": {
+        "mean": 0.057842958331108085,
+        "std": 0.024105312626501462
+      },
+      "uncertainty": {
+        "mean": 0.5713978237886214,
+        "std": 0.07091285301143523
+      },
+      "transition_pressure": {
+        "mean": -0.012517100422233767,
+        "std": 0.002036065507728912
+      },
+      "recovery_margin": {
+        "mean": 0.9615628285010656,
+        "std": 0.05237652936554117
+      }
+    },
+    "conversation": {
+      "commitment": {
+        "mean": 0.10337439586260412,
+        "std": 0.019316573820480683
+      }
+    },
+    "kg_path": {
+      "commitment": {
+        "mean": 0.07312877323958941,
+        "std": 0.01595196265934176
+      },
+      "uncertainty": {
+        "mean": 0.3418415476810865,
+        "std": 0.09478677360248514
+      },
+      "transition_pressure": {
+        "mean": -0.04227893737220919,
+        "std": 0.019718007726594315
+      },
+      "recovery_margin": {
+        "mean": 0.8656812755506443,
+        "std": 0.046311381665164394
+      }
+    }
+  }
+}
