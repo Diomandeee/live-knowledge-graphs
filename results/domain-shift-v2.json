@@ -1,0 +1,835 @@
+{
+  "experiment": "domain_shift",
+  "paper": "Paper 3: Runtime Knowledge Graphs",
+  "timestamp": "2026-03-22T04:37:57.612731+00:00",
+  "runtime_seconds": 753.62,
+  "hypothesis": "Entity coverage drops significantly over time with a frozen KG but remains stable with a live (runtime-updated) KG",
+  "data_source": {
+    "table": "memory_turns",
+    "total_rows_in_table": 354512,
+    "rows_fetched": 24000,
+    "time_range": {
+      "period_1": {
+        "label": "2024 (pre-Claude-Code)",
+        "start": "2024-01-01T00:00:00+00:00",
+        "end": "2025-01-01T00:00:00+00:00",
+        "turns": 8000
+      },
+      "period_2": {
+        "label": "2025 H1 (expansion)",
+        "start": "2025-01-01T00:00:00+00:00",
+        "end": "2025-09-01T00:00:00+00:00",
+        "turns": 8000
+      },
+      "period_3": {
+        "label": "2025 H2 + 2026 (mesh era)",
+        "start": "2025-09-01T00:00:00+00:00",
+        "end": "2026-03-20T00:00:00+00:00",
+        "turns": 8000
+      }
+    }
+  },
+  "entity_extraction": {
+    "method": "pattern_matching",
+    "num_patterns": 143,
+    "early_entities_count": 23,
+    "mid_entities_count": 70,
+    "late_entities_count": 50,
+    "pattern_categories": [
+      "iOS apps/projects",
+      "infrastructure",
+      "AI/ML",
+      "languages/frameworks",
+      "domain concepts",
+      "machines",
+      "services",
+      "techniques",
+      "emerging concepts"
+    ]
+  },
+  "knowledge_graphs": {
+    "frozen_kg": {
+      "name": "frozen_kg_period1",
+      "num_entities": 38,
+      "num_edges": 135,
+      "total_edge_weight": 1166
+    },
+    "live_kg_through_period1": {
+      "name": "live_kg_through_period1",
+      "num_entities": 38,
+      "num_edges": 135,
+      "total_edge_weight": 1166
+    },
+    "live_kg_through_period2": {
+      "name": "live_kg_through_period2",
+      "num_entities": 55,
+      "num_edges": 210,
+      "total_edge_weight": 1913
+    },
+    "live_kg_through_period3": {
+      "name": "live_kg_through_period3",
+      "num_entities": 120,
+      "num_edges": 3512,
+      "total_edge_weight": 21640
+    },
+    "growth": {
+      "period_1": {
+        "kg_entities": 38,
+        "kg_edges": 135
+      },
+      "cumulative_through_period_2": {
+        "kg_entities": 55,
+        "kg_edges": 210
+      },
+      "cumulative_through_period_3": {
+        "kg_entities": 120,
+        "kg_edges": 3512
+      },
+      "entity_growth_p1_to_p3_pct": 215.8,
+      "edge_growth_p1_to_p3_pct": 2501.5
+    }
+  },
+  "period_metrics": [
+    {
+      "period": "period_1_2024",
+      "total_turns": 8000,
+      "turns_with_entities": 2128,
+      "unique_entities_in_period": 38,
+      "unique_entities_list": [
+        "anthropic",
+        "app store connect",
+        "clarity",
+        "claude",
+        "discord",
+        "docker",
+        "embedding",
+        "epoch",
+        "fastapi",
+        "fine-tune",
+        "gemini",
+        "github",
+        "grafana",
+        "koatji",
+        "mesh",
+        "next.js",
+        "nextjs",
+        "ollama",
+        "openai",
+        "orbit",
+        "pane",
+        "prometheus",
+        "python",
+        "react",
+        "retrieval",
+        "reward function",
+        "reward model",
+        "serenity",
+        "stacks",
+        "swift",
+        "swiftui",
+        "tailwind",
+        "testflight",
+        "trajectory",
+        "typescript",
+        "vector",
+        "whisper",
+        "xcode"
+      ],
+      "total_entity_mentions": 2984,
+      "mean_entities_per_turn": 1.4,
+      "frozen_kg": {
+        "entity_coverage_mean": 1.0,
+        "entity_coverage_std": 0.0,
+        "entity_coverage_median": 1.0,
+        "path_availability_mean": 1.0,
+        "path_availability_std": 0.0,
+        "path_availability_median": 1.0,
+        "novel_entity_count": 0,
+        "novel_entity_rate": 0.0
+      },
+      "live_kg": {
+        "entity_coverage_mean": 1.0,
+        "entity_coverage_std": 0.0,
+        "entity_coverage_median": 1.0,
+        "path_availability_mean": 1.0,
+        "path_availability_std": 0.0,
+        "path_availability_median": 1.0,
+        "novel_entity_count": 0,
+        "novel_entity_rate": 0.0
+      },
+      "coverage_delta": 0.0,
+      "path_delta": 0.0
+    },
+    {
+      "period": "period_2_2025H1",
+      "total_turns": 8000,
+      "turns_with_entities": 1921,
+      "unique_entities_in_period": 48,
+      "unique_entities_list": [
+        "anthropic",
+        "aura",
+        "bambara",
+        "bfs",
+        "bitcoin",
+        "caddy",
+        "clarity",
+        "claude",
+        "content pipeline",
+        "cortex",
+        "discord",
+        "docker",
+        "embedding",
+        "fine-tune",
+        "gemini",
+        "github",
+        "knowledge graph",
+        "koatji",
+        "launchagent",
+        "manding",
+        "mesh",
+        "multi-hop",
+        "n'ko",
+        "next.js",
+        "nextjs",
+        "nexus",
+        "nko",
+        "ollama",
+        "openai",
+        "orbit",
+        "provenance",
+        "python",
+        "react",
+        "retrieval",
+        "reward function",
+        "rust",
+        "serenity",
+        "stacks",
+        "supabase",
+        "swift",
+        "swiftui",
+        "tailwind",
+        "testflight",
+        "trajectory",
+        "typescript",
+        "vector",
+        "whisper",
+        "xcode"
+      ],
+      "total_entity_mentions": 2503,
+      "mean_entities_per_turn": 1.3,
+      "frozen_kg": {
+        "entity_coverage_mean": 0.9506,
+        "entity_coverage_std": 0.2134,
+        "entity_coverage_median": 1.0,
+        "path_availability_mean": 0.9021,
+        "path_availability_std": 0.2908,
+        "path_availability_median": 1.0,
+        "novel_entity_count": 132,
+        "novel_entity_rate": 0.0527
+      },
+      "live_kg": {
+        "entity_coverage_mean": 1.0,
+        "entity_coverage_std": 0.0,
+        "entity_coverage_median": 1.0,
+        "path_availability_mean": 1.0,
+        "path_availability_std": 0.0,
+        "path_availability_median": 1.0,
+        "novel_entity_count": 0,
+        "novel_entity_rate": 0.0
+      },
+      "coverage_delta": 0.0494,
+      "path_delta": 0.0979
+    },
+    {
+      "period": "period_3_2025H2_2026",
+      "total_turns": 8000,
+      "turns_with_entities": 3064,
+      "unique_entities_in_period": 119,
+      "unique_entities_list": [
+        "ab-browser",
+        "admissibility",
+        "agent browser",
+        "agent swarm",
+        "anthropic",
+        "app store connect",
+        "aura",
+        "aura gateway",
+        "autopilot",
+        "axum",
+        "bambara",
+        "bfs",
+        "bitcoin",
+        "clarity",
+        "claude",
+        "clawdbot",
+        "cloud-vm",
+        "cognitive twin",
+        "comp-core",
+        "composable architecture",
+        "content pipeline",
+        "context slicing",
+        "cortex",
+        "creativedirector",
+        "creator shield",
+        "cross-script bridge",
+        "design curator",
+        "design dna",
+        "discord",
+        "docker",
+        "dream weaver",
+        "embedding",
+        "epoch",
+        "evolution world",
+        "exo",
+        "fastapi",
+        "feed hub",
+        "fine-tune",
+        "firstdate",
+        "gemini",
+        "github",
+        "glasses gateway",
+        "grafana",
+        "graph kernel",
+        "graph traversal",
+        "hooks architecture",
+        "knowledge graph",
+        "koatji",
+        "launchagent",
+        "lora",
+        "mac1",
+        "mac2",
+        "mac3",
+        "mac4",
+        "mac5",
+        "manding",
+        "memory guardian",
+        "mesh",
+        "milkmen",
+        "mlx",
+        "multi-hop",
+        "n'ko",
+        "next.js",
+        "nextjs",
+        "nexus",
+        "nexus portal",
+        "nko",
+        "numu",
+        "numu fare",
+        "ollama",
+        "openai",
+        "openclawhub",
+        "openclawkit",
+        "openclawpayments",
+        "orbit",
+        "orbit server",
+        "pane",
+        "pane orchestrator",
+        "pane spawn",
+        "perception mesh",
+        "pgvector",
+        "prefect",
+        "prometheus",
+        "prompt logger",
+        "provenance",
+        "python",
+        "rag",
+        "react",
+        "retrieval",
+        "reward function",
+        "reward model",
+        "rust",
+        "screen capture",
+        "securiclaw",
+        "serenity",
+        "sigil composer",
+        "skill entity",
+        "spatial git",
+        "spawn protocol",
+        "speakflow",
+        "spore",
+        "stacks",
+        "supabase",
+        "swarm",
+        "swift",
+        "swiftui",
+        "syncthing",
+        "tailscale",
+        "tailwind",
+        "tca",
+        "telegram",
+        "testflight",
+        "thought mesh",
+        "trajectory",
+        "typescript",
+        "vantage",
+        "vector",
+        "whisper",
+        "xcode"
+      ],
+      "total_entity_mentions": 8210,
+      "mean_entities_per_turn": 2.68,
+      "frozen_kg": {
+        "entity_coverage_mean": 0.6651,
+        "entity_coverage_std": 0.3863,
+        "entity_coverage_median": 0.8333,
+        "path_availability_mean": 0.5671,
+        "path_availability_std": 0.4729,
+        "path_availability_median": 1.0,
+        "novel_entity_count": 3372,
+        "novel_entity_rate": 0.4107
+      },
+      "live_kg": {
+        "entity_coverage_mean": 1.0,
+        "entity_coverage_std": 0.0,
+        "entity_coverage_median": 1.0,
+        "path_availability_mean": 1.0,
+        "path_availability_std": 0.0,
+        "path_availability_median": 1.0,
+        "novel_entity_count": 0,
+        "novel_entity_rate": 0.0
+      },
+      "coverage_delta": 0.3349,
+      "path_delta": 0.4329
+    }
+  ],
+  "entity_novelty": {
+    "period_1_unique_entities": 38,
+    "period_2_unique_entities": 48,
+    "period_3_unique_entities": 119,
+    "novel_in_period_2": [
+      "aura",
+      "bambara",
+      "bfs",
+      "bitcoin",
+      "caddy",
+      "content pipeline",
+      "cortex",
+      "knowledge graph",
+      "launchagent",
+      "manding",
+      "multi-hop",
+      "n'ko",
+      "nexus",
+      "nko",
+      "provenance",
+      "rust",
+      "supabase"
+    ],
+    "novel_in_period_3": [
+      "ab-browser",
+      "admissibility",
+      "agent browser",
+      "agent swarm",
+      "aura gateway",
+      "autopilot",
+      "axum",
+      "clawdbot",
+      "cloud-vm",
+      "cognitive twin",
+      "comp-core",
+      "composable architecture",
+      "context slicing",
+      "creativedirector",
+      "creator shield",
+      "cross-script bridge",
+      "design curator",
+      "design dna",
+      "dream weaver",
+      "evolution world",
+      "exo",
+      "feed hub",
+      "firstdate",
+      "glasses gateway",
+      "graph kernel",
+      "graph traversal",
+      "hooks architecture",
+      "lora",
+      "mac1",
+      "mac2",
+      "mac3",
+      "mac4",
+      "mac5",
+      "memory guardian",
+      "milkmen",
+      "mlx",
+      "nexus portal",
+      "numu",
+      "numu fare",
+      "openclawhub",
+      "openclawkit",
+      "openclawpayments",
+      "orbit server",
+      "pane orchestrator",
+      "pane spawn",
+      "perception mesh",
+      "pgvector",
+      "prefect",
+      "prompt logger",
+      "rag",
+      "screen capture",
+      "securiclaw",
+      "sigil composer",
+      "skill entity",
+      "spatial git",
+      "spawn protocol",
+      "speakflow",
+      "spore",
+      "swarm",
+      "syncthing",
+      "tailscale",
+      "tca",
+      "telegram",
+      "thought mesh",
+      "vantage"
+    ],
+    "novelty_rate_p2": 0.3542,
+    "novelty_rate_p3": 0.5462
+  },
+  "top_entities_by_period": {
+    "period_1": [
+      {
+        "entity": "react",
+        "count": 997
+      },
+      {
+        "entity": "python",
+        "count": 706
+      },
+      {
+        "entity": "typescript",
+        "count": 572
+      },
+      {
+        "entity": "next.js",
+        "count": 161
+      },
+      {
+        "entity": "tailwind",
+        "count": 77
+      },
+      {
+        "entity": "fastapi",
+        "count": 66
+      },
+      {
+        "entity": "vector",
+        "count": 66
+      },
+      {
+        "entity": "trajectory",
+        "count": 48
+      },
+      {
+        "entity": "embedding",
+        "count": 48
+      },
+      {
+        "entity": "clarity",
+        "count": 42
+      },
+      {
+        "entity": "nextjs",
+        "count": 25
+      },
+      {
+        "entity": "epoch",
+        "count": 21
+      },
+      {
+        "entity": "fine-tune",
+        "count": 15
+      },
+      {
+        "entity": "docker",
+        "count": 15
+      },
+      {
+        "entity": "swift",
+        "count": 15
+      }
+    ],
+    "period_2": [
+      {
+        "entity": "react",
+        "count": 902
+      },
+      {
+        "entity": "typescript",
+        "count": 488
+      },
+      {
+        "entity": "python",
+        "count": 190
+      },
+      {
+        "entity": "koatji",
+        "count": 137
+      },
+      {
+        "entity": "next.js",
+        "count": 124
+      },
+      {
+        "entity": "clarity",
+        "count": 87
+      },
+      {
+        "entity": "vector",
+        "count": 61
+      },
+      {
+        "entity": "n'ko",
+        "count": 57
+      },
+      {
+        "entity": "embedding",
+        "count": 56
+      },
+      {
+        "entity": "github",
+        "count": 49
+      },
+      {
+        "entity": "openai",
+        "count": 45
+      },
+      {
+        "entity": "tailwind",
+        "count": 35
+      },
+      {
+        "entity": "gemini",
+        "count": 30
+      },
+      {
+        "entity": "retrieval",
+        "count": 27
+      },
+      {
+        "entity": "bambara",
+        "count": 23
+      }
+    ],
+    "period_3": [
+      {
+        "entity": "claude",
+        "count": 532
+      },
+      {
+        "entity": "python",
+        "count": 434
+      },
+      {
+        "entity": "trajectory",
+        "count": 431
+      },
+      {
+        "entity": "vector",
+        "count": 430
+      },
+      {
+        "entity": "supabase",
+        "count": 362
+      },
+      {
+        "entity": "embedding",
+        "count": 259
+      },
+      {
+        "entity": "swift",
+        "count": 224
+      },
+      {
+        "entity": "pane",
+        "count": 216
+      },
+      {
+        "entity": "rust",
+        "count": 215
+      },
+      {
+        "entity": "comp-core",
+        "count": 192
+      },
+      {
+        "entity": "clawdbot",
+        "count": 171
+      },
+      {
+        "entity": "rag",
+        "count": 167
+      },
+      {
+        "entity": "discord",
+        "count": 166
+      },
+      {
+        "entity": "retrieval",
+        "count": 152
+      },
+      {
+        "entity": "mesh",
+        "count": 146
+      }
+    ]
+  },
+  "key_findings": {
+    "frozen_kg_coverage_trend": [
+      1.0,
+      0.9506,
+      0.6651
+    ],
+    "live_kg_coverage_trend": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "frozen_coverage_drop_absolute": 0.3349,
+    "frozen_coverage_drop_percent": 33.49,
+    "live_coverage_drop_absolute": 0.0,
+    "live_coverage_drop_percent": 0.0,
+    "frozen_drop_per_period": 0.1674,
+    "cohens_d_coverage_period_2": 0.3277,
+    "cohens_d_coverage_period_3": 1.2259,
+    "cohens_d_path_period_2": 0.4759,
+    "cohens_d_path_period_3": 1.2948,
+    "frozen_path_trend": [
+      1.0,
+      0.9021,
+      0.5671
+    ],
+    "live_path_trend": [
+      1.0,
+      1.0,
+      1.0
+    ]
+  },
+  "novel_entity_pairs_in_live_kg": [
+    {
+      "entity_a": "claude",
+      "entity_b": "supabase",
+      "weight": 111
+    },
+    {
+      "entity_a": "claude",
+      "entity_b": "pane",
+      "weight": 92
+    },
+    {
+      "entity_a": "python",
+      "entity_b": "rust",
+      "weight": 84
+    },
+    {
+      "entity_a": "prefect",
+      "entity_b": "supabase",
+      "weight": 79
+    },
+    {
+      "entity_a": "nexus",
+      "entity_b": "nexus portal",
+      "weight": 76
+    },
+    {
+      "entity_a": "discord",
+      "entity_b": "supabase",
+      "weight": 71
+    },
+    {
+      "entity_a": "claude",
+      "entity_b": "mesh",
+      "weight": 71
+    },
+    {
+      "entity_a": "mac4",
+      "entity_b": "mac5",
+      "weight": 70
+    },
+    {
+      "entity_a": "cloud-vm",
+      "entity_b": "supabase",
+      "weight": 69
+    },
+    {
+      "entity_a": "rag",
+      "entity_b": "retrieval",
+      "weight": 64
+    },
+    {
+      "entity_a": "claude",
+      "entity_b": "clawdbot",
+      "weight": 63
+    },
+    {
+      "entity_a": "pane",
+      "entity_b": "supabase",
+      "weight": 63
+    },
+    {
+      "entity_a": "embedding",
+      "entity_b": "retrieval",
+      "weight": 62
+    },
+    {
+      "entity_a": "claude",
+      "entity_b": "discord",
+      "weight": 61
+    },
+    {
+      "entity_a": "cloud-vm",
+      "entity_b": "prefect",
+      "weight": 61
+    },
+    {
+      "entity_a": "orbit",
+      "entity_b": "trajectory",
+      "weight": 60
+    },
+    {
+      "entity_a": "mesh",
+      "entity_b": "pane",
+      "weight": 60
+    },
+    {
+      "entity_a": "mesh",
+      "entity_b": "supabase",
+      "weight": 57
+    },
+    {
+      "entity_a": "retrieval",
+      "entity_b": "vector",
+      "weight": 56
+    },
+    {
+      "entity_a": "claude",
+      "entity_b": "nexus",
+      "weight": 50
+    },
+    {
+      "entity_a": "nexus",
+      "entity_b": "supabase",
+      "weight": 49
+    },
+    {
+      "entity_a": "rust",
+      "entity_b": "trajectory",
+      "weight": 48
+    },
+    {
+      "entity_a": "claude",
+      "entity_b": "cloud-vm",
+      "weight": 48
+    },
+    {
+      "entity_a": "python",
+      "entity_b": "supabase",
+      "weight": 47
+    },
+    {
+      "entity_a": "supabase",
+      "entity_b": "swift",
+      "weight": 47
+    }
+  ],
+  "headline": "Entity coverage drops 33.5% over 3 periods with frozen KG (from 1.000 to 0.665) but remains stable at 0.0% with live KG (from 1.000 to 1.000). Cohen's d = 1.226 (coverage), 1.295 (paths) for Period 3."
+}
